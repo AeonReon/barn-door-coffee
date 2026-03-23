@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barn Door Coffee & Kitchen | Speciality Coffee & Homemade Bakes in Coleraine</title>
+    <meta name="description" content="Barn Door Coffee & Kitchen — speciality coffee, legendary homemade bakes & fresh brunch in Coleraine. 4.7★ rated. Two locations. Dog-friendly. Visit us today!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #2c2c2c;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+        .eyebrow {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #C4703F;
+            margin-bottom: 0.75rem;
+        }
+        .section-heading {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+        }
+        .section-sub {
+            font-size: 1.05rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* ========== LAYOUT ========== */
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+        .section { padding: 80px 0; }
+        .text-center { text-align: center; }
+
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-block;
+            padding: 16px 36px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-primary {
+            background: #C4703F;
+            color: #fff;
+        }
+        .btn-primary:hover { background: #a85e33; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,112,63,0.3); }
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+        .btn-dark {
+            background: #5C3D2E;
+            color: #fff;
+        }
+        .btn-dark:hover { background: #4a3025; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(92,61,46,0.3); }
+
+        /* ========== HEADER / NAV ========== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        .header.scrolled {
+            background: rgba(255,255,255,0.97);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            padding: 10px 0;
+        }
+        .header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo img { height: 44px; width: auto; }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        .header.scrolled .logo-text { color: #5C3D2E; }
+        .nav { display: flex; align-items: center; gap: 28px; }
+        .nav a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            transition: color 0.3s;
+        }
+        .header.scrolled .nav a { color: #555; }
+        .nav a:hover { color: #C4703F; }
+        .nav-cta {
+            background: #C4703F !important;
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 0.85rem !important;
+        }
+        .nav-cta:hover { background: #a85e33 !important; }
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .mobile-toggle span {
+            width: 26px;
+            height: 2.5px;
+            background: #fff;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+        .header.scrolled .mobile-toggle span { background: #5C3D2E; }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            /* STOCK IMAGE: Replace with real photo of Barn Door Coffee exterior or interior */
+            background: linear-gradient(rgba(30,25,20,0.55), rgba(30,25,20,0.65)),
+                        url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1400&q=60');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+        .hero-content { max-width: 680px; padding-top: 80px; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            opacity: 0.92;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+        .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        /* ========== SOCIAL PROOF BAR ========== */
+        .proof-bar {
+            background: #fff;
+            padding: 28px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .proof-bar .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #444;
+        }
+        .proof-item .star { color: #F5A623; font-size: 1.2rem; }
+        .proof-icon { font-size: 1.4rem; }
+
+        /* ========== ABOUT / STORY ========== */
+        .about {
+            background: #f8f5f1;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 450px;
+            /* STOCK IMAGE: Replace with real photo of Hannah Pilkiewicz, the owner */
+            background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=60');
+            background-size: cover;
+            background-position: center;
+        }
+        .about-text h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            margin-bottom: 20px;
+            color: #5C3D2E;
+        }
+        .about-text p {
+            color: #555;
+            margin-bottom: 16px;
+            font-size: 1.02rem;
+        }
+        .about-text .highlight {
+            font-weight: 700;
+            color: #C4703F;
+        }
+
+        /* ========== WHAT WE SERVE (MENU HIGHLIGHTS) ========== */
+        .menu-section {
+            background: #fff;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .menu-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .menu-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+        .menu-card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .menu-card-body { padding: 24px; }
+        .menu-card-body h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+            color: #5C3D2E;
+        }
+        .menu-card-body p { color: #666; font-size: 0.92rem; }
+
+        /* ========== WHY LOCALS LOVE US ========== */
+        .why-us {
+            background: #1a1a1e;
+            color: #fff;
+        }
+        .why-us .eyebrow { color: #C4703F; }
+        .why-us .section-heading { color: #fff; }
+        .why-us .section-sub { color: rgba(255,255,255,0.7); }
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .why-card {
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .why-card:hover { transform: translateY(-4px); }
+        .why-card-img {
+            height: 190px;
+            background-size: cover;
+            background-position: center;
+        }
+        .why-card-body { padding: 24px; }
+        .why-card-body h3 {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        .why-card-body p { color: rgba(255,255,255,0.7); font-size: 0.92rem; }
+
+        /* ========== FAMOUS BAKES ========== */
+        .bakes-section {
+            background: #f8f5f1;
+        }
+        .bakes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .bakes-image {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 420px;
+            /* STOCK IMAGE: Replace with real photo of Barn Door bakes display */
+            background: url('https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=60');
+            background-size: cover;
+            background-position: center;
+        }
+        .bakes-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+        .bakes-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            font-size: 1.02rem;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .bakes-list li:last-child { border-bottom: none; }
+        .bakes-list .dot {
+            width: 8px;
+            height: 8px;
+            background: #C4703F;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ========== REVIEWS ========== */
+        .reviews {
+            background: #fff;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .review-card {
+            background: #f8f5f1;
+            border-radius: 12px;
+            padding: 32px;
+            position: relative;
+        }
+        .review-stars {
+            color: #F5A623;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        .review-card p {
+            color: #555;
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        .review-author {
+            font-weight: 700;
+            color: #5C3D2E;
+            font-size: 0.9rem;
+        }
+        .review-source {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* ========== TWO LOCATIONS ========== */
+        .locations {
+            background: #1a1a1e;
+            color: #fff;
+        }
+        .locations .eyebrow { color: #C4703F; }
+        .locations .section-heading { color: #fff; }
+        .locations .section-sub { color: rgba(255,255,255,0.7); }
+        .locations-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+        .location-card {
+            background: rgba(255,255,255,0.06);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        .location-card-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+        .location-card-body {
+            padding: 32px;
+        }
+        .location-card-body h3 {
+            font-size: 1.35rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        .location-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+        }
+        .location-detail .icon {
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ========== CONTACT / FORM ========== */
+        .contact {
+            background: #f8f5f1;
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .contact-info h2 {
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            color: #5C3D2E;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            color: #555;
+            margin-bottom: 24px;
+            font-size: 1.02rem;
+        }
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: #444;
+        }
+        .contact-detail .icon {
+            width: 44px;
+            height: 44px;
+            background: #C4703F;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+        .contact-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .contact-social a {
+            width: 44px;
+            height: 44px;
+            background: #5C3D2E;
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+        .contact-social a:hover { background: #C4703F; }
+        .contact-form {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        .contact-form h3 {
+            font-size: 1.4rem;
+            color: #5C3D2E;
+            margin-bottom: 24px;
+        }
+        .form-group { margin-bottom: 18px; }
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+            background: #fafafa;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #C4703F;
+            background: #fff;
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+        .form-submit {
+            width: 100%;
+            padding: 16px;
+            background: #C4703F;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .form-submit:hover { background: #a85e33; }
+        .form-submit.success {
+            background: #25D366;
+            pointer-events: none;
+        }
+        .form-success-msg {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .form-success-msg h3 {
+            color: #25D366;
+            margin-bottom: 12px;
+        }
+        .form-success-msg p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* ========== URGENCY BANNER ========== */
+        .urgency-banner {
+            background: #C4703F;
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .urgency-banner h2 {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            margin-bottom: 12px;
+        }
+        .urgency-banner p {
+            font-size: 1.05rem;
+            opacity: 0.92;
+            margin-bottom: 24px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .urgency-banner .btn {
+            background: #fff;
+            color: #C4703F;
+            font-weight: 700;
+        }
+        .urgency-banner .btn:hover {
+            background: #f8f5f1;
+            transform: translateY(-2px);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background: #1a1a1e;
+            color: rgba(255,255,255,0.6);
+            padding: 48px 0 24px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 36px;
+        }
+        .footer h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+        .footer p, .footer a {
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .footer a:hover { color: #C4703F; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .footer-bottom a { color: rgba(255,255,255,0.4); }
+        .footer-bottom a:hover { color: #C4703F; }
+
+        /* ========== SCROLL ANIMATIONS ========== */
+        .fade-up { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-up.will-animate { opacity: 0; transform: translateY(30px); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 900px) {
+            .nav { display: none; }
+            .nav.open {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(26,26,30,0.97);
+                justify-content: center;
+                align-items: center;
+                gap: 24px;
+                z-index: 999;
+            }
+            .nav.open a { color: #fff !important; font-size: 1.2rem; }
+            .mobile-toggle { display: flex; }
+            .about-grid,
+            .bakes-grid,
+            .contact-grid,
+            .locations-grid { grid-template-columns: 1fr; }
+            .menu-grid,
+            .why-grid,
+            .reviews-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: clamp(2rem, 7vw, 2.8rem); }
+            .proof-bar .container { gap: 24px; }
+            .bakes-image { height: 300px; }
+            .about-image { height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Barn Door Coffee & Kitchen">
+                <span class="logo-text">Barn Door</span>
+            </a>
+            <nav class="nav" id="nav">
+                <a href="#about">Our Story</a>
+                <a href="#menu">Menu</a>
+                <a href="#bakes">Famous Bakes</a>
+                <a href="#locations">Locations</a>
+                <a href="#contact" class="nav-cta">Get Directions</a>
+            </nav>
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">&#9733; 4.7 Stars — 134 Google Reviews</div>
+                <h1>Speciality Coffee & Legendary Homemade Bakes in the Heart of Coleraine</h1>
+                <p>Fresh brunch made from local, seasonal produce. Bakes so good we supply 20+ businesses across Northern Ireland. Dog-friendly, family-friendly, and worth the trip.</p>
+                <div class="hero-buttons">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=19+Stone+Row,+Coleraine,+BT52+1EP" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+                    <a href="#menu" class="btn btn-secondary">See What's On</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF BAR ========== -->
+    <div class="proof-bar">
+        <div class="container">
+            <div class="proof-item">
+                <span class="star">&#9733;</span> 4.7 Stars on Google
+            </div>
+            <div class="proof-item">
+                <span class="proof-icon">&#128062;</span> Dog Friendly
+            </div>
+            <div class="proof-item">
+                <span class="proof-icon">&#127850;</span> 20+ Stockists Across NI
+            </div>
+            <div class="proof-item">
+                <span class="proof-icon">&#127807;</span> GF & Vegan Options
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== ABOUT / STORY ========== -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <!-- STOCK IMAGE: Replace with real photo of Hannah Pilkiewicz, the owner -->
+                <div class="about-image fade-up"></div>
+                <div class="about-text fade-up">
+                    <p class="eyebrow">Our Story</p>
+                    <h2>Born From a Love of Proper Coffee & Real Baking</h2>
+                    <p>Founded by <span class="highlight">Hannah Pilkiewicz</span>, Barn Door Coffee & Kitchen started with a simple idea — bring the North Coast a place where every coffee is speciality-grade and every bake is made from scratch, right here in Coleraine.</p>
+                    <p>What began as one cosy cafe on Stone Row has grown into <span class="highlight">two locations</span>, a mobile caravan for events, and a wholesale bakery supplying over 20 businesses across Northern Ireland.</p>
+                    <p>Everything is made fresh using local, seasonal produce. No shortcuts. No mass-produced anything. Just proper food, proper coffee, and a warm welcome — whether you've got the kids, the dog, or just need five minutes of peace with a flat white and a brownie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHAT WE SERVE ========== -->
+    <section class="menu-section section" id="menu">
+        <div class="container text-center">
+            <p class="eyebrow">What We Serve</p>
+            <h2 class="section-heading">Fresh, Local & Made With Love</h2>
+            <p class="section-sub">From speciality coffee to hearty brunch plates — everything on our menu is prepared fresh using locally sourced, seasonal ingredients.</p>
+        </div>
+        <div class="container">
+            <div class="menu-grid">
+                <div class="menu-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo of Barn Door coffee being served -->
+                    <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=60')"></div>
+                    <div class="menu-card-body">
+                        <h3>Speciality Coffee</h3>
+                        <p>Expertly brewed flat whites, lattes, americanos & more. Our caramel latte is legendary — customers drive from across the coast for it.</p>
+                    </div>
+                </div>
+                <div class="menu-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo of Barn Door brunch plates -->
+                    <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600&q=60')"></div>
+                    <div class="menu-card-body">
+                        <h3>Fresh Brunch</h3>
+                        <p>Fluffy pancakes, loaded bagels, hearty soups with sourdough, and seasonal specials — all made to order from local ingredients.</p>
+                    </div>
+                </div>
+                <div class="menu-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo of Barn Door bakes/brownies -->
+                    <div class="menu-card-img" style="background-image: url('https://images.unsplash.com/photo-1509461399763-ae67a981b254?w=600&q=60')"></div>
+                    <div class="menu-card-body">
+                        <h3>Homemade Bakes</h3>
+                        <p>Salted caramel brownie truffles, giant red velvet cookies, cinnamon swirls, and more. Baked fresh daily — the reason 20+ businesses stock our treats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY LOCALS LOVE US ========== -->
+    <section class="why-us section">
+        <div class="container text-center">
+            <p class="eyebrow">Why Locals Love Us</p>
+            <h2 class="section-heading">Not Just Another Coffee Shop</h2>
+            <p class="section-sub">There's a reason we're rated 4.7 stars with 134 reviews. Here's what keeps people coming back.</p>
+        </div>
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo showing Barn Door fresh ingredients -->
+                    <div class="why-card-img" style="background-image: url('https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=60')"></div>
+                    <div class="why-card-body">
+                        <h3>Locally Sourced, Seasonal Produce</h3>
+                        <p>We don't cut corners. Every dish uses fresh, local ingredients — supporting Northern Irish suppliers while giving you food that actually tastes like food.</p>
+                    </div>
+                </div>
+                <div class="why-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo of family/dog in cafe setting -->
+                    <div class="why-card-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600&q=60')"></div>
+                    <div class="why-card-body">
+                        <h3>Bring the Whole Family (& the Dog)</h3>
+                        <p>Kids' menu, high chairs, plenty of space, and your four-legged friend is always welcome. We're built for real life, not just Instagram.</p>
+                    </div>
+                </div>
+                <div class="why-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo of Barn Door custom cakes -->
+                    <div class="why-card-img" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=60')"></div>
+                    <div class="why-card-body">
+                        <h3>Custom Cakes & Wholesale Bakes</h3>
+                        <p>Need a showstopper for a birthday? We do bespoke cakes in flavours like Nutella, Banoffee & Pear Walnut. Plus wholesale bakes for your business.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FAMOUS BAKES ========== -->
+    <section class="bakes-section section" id="bakes">
+        <div class="container">
+            <div class="bakes-grid">
+                <div class="fade-up">
+                    <p class="eyebrow">Our Famous Bakes</p>
+                    <h2 class="section-heading" style="color:#5C3D2E;">The Bakes That Built Our Reputation</h2>
+                    <p style="color:#555; margin-bottom:8px;">Every single item is baked from scratch in our kitchen. No packets, no shortcuts. These are the treats that 20+ businesses across Northern Ireland trust us to supply.</p>
+                    <ul class="bakes-list">
+                        <li><span class="dot"></span> Salted Caramel Brownie Truffles</li>
+                        <li><span class="dot"></span> Giant Red Velvet Stuffed Cookies</li>
+                        <li><span class="dot"></span> Shortbread Jammy Dodgers</li>
+                        <li><span class="dot"></span> Dark Chocolate & Raspberry Banana Bread</li>
+                        <li><span class="dot"></span> Cinnamon Swirls</li>
+                        <li><span class="dot"></span> Brownie Slabs</li>
+                        <li><span class="dot"></span> Bespoke Cakes (Nutella, Banoffee, Pear Walnut & more)</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-dark">Place an Order</a>
+                </div>
+                <!-- STOCK IMAGE: Replace with real photo of Barn Door bakes display cabinet -->
+                <div class="bakes-image fade-up"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== REVIEWS ========== -->
+    <section class="reviews section" id="reviews">
+        <div class="container text-center">
+            <p class="eyebrow">What People Say</p>
+            <h2 class="section-heading">Don't Take Our Word For It</h2>
+            <p class="section-sub">Real reviews from real customers. <a href="https://www.google.com/search?q=Barn+Door+Coffee+Kitchen+Coleraine+reviews" target="_blank" rel="noopener" style="color:#C4703F; text-decoration:underline;">See all reviews on Google</a></p>
+        </div>
+        <div class="container">
+            <div class="reviews-grid">
+                <div class="review-card fade-up">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"I had the vegan soup and sourdough option, and it was so good, I had to email for the recipe. Coffee also great. Friendly staff."</p>
+                    <span class="review-author">Google Reviewer</span><br>
+                    <span class="review-source">via Google Reviews</span>
+                </div>
+                <div class="review-card fade-up">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"One of the best coffee spots in Northern Ireland. The caramel latte is spot on. Staff are friendly and down-to-earth. Spacious and great for families with kids."</p>
+                    <span class="review-author">Google Reviewer</span><br>
+                    <span class="review-source">via Google Reviews</span>
+                </div>
+                <div class="review-card fade-up">
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p>"Delicious food, fantastic coffee, and the bakes are incredible. Well-cooked meals served promptly even when it's busy. Can't recommend enough."</p>
+                    <span class="review-author">Google Reviewer</span><br>
+                    <span class="review-source">via Google Reviews</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TWO LOCATIONS ========== -->
+    <section class="locations section" id="locations">
+        <div class="container text-center">
+            <p class="eyebrow">Find Us</p>
+            <h2 class="section-heading">Two Locations in Coleraine</h2>
+            <p class="section-sub">Our cosy Stone Row cafe for sit-in dining, and our Waterside Bakery for grab-and-go coffee & bakes.</p>
+        </div>
+        <div class="container">
+            <div class="locations-grid">
+                <div class="location-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo of Stone Row Cafe exterior -->
+                    <div class="location-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=600&q=60')"></div>
+                    <div class="location-card-body">
+                        <h3>Stone Row Cafe</h3>
+                        <div class="location-detail">
+                            <span class="icon">&#128205;</span>
+                            <span>19 Stone Row, Coleraine, BT52 1EP</span>
+                        </div>
+                        <div class="location-detail">
+                            <span class="icon">&#128336;</span>
+                            <span>Mon — Sat: 9:30am — 4:00pm</span>
+                        </div>
+                        <div class="location-detail">
+                            <span class="icon">&#127860;</span>
+                            <span>Full brunch menu, speciality coffee, homemade bakes. Dine-in seating. Dog & family friendly.</span>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=19+Stone+Row,+Coleraine,+BT52+1EP" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px; padding:12px 28px; font-size:0.9rem;">Get Directions</a>
+                    </div>
+                </div>
+                <div class="location-card fade-up">
+                    <!-- STOCK IMAGE: Replace with real photo of Waterside Bakery exterior -->
+                    <div class="location-card-img" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=60')"></div>
+                    <div class="location-card-body">
+                        <h3>Waterside Bakery</h3>
+                        <div class="location-detail">
+                            <span class="icon">&#128205;</span>
+                            <span>24c Ballyrashane Road, Coleraine, BT52 2NL</span>
+                        </div>
+                        <div class="location-detail">
+                            <span class="icon">&#128336;</span>
+                            <span>Mon — Fri: 8:30am — 3:00pm<br>Sat: 10:00am — 3:00pm</span>
+                        </div>
+                        <div class="location-detail">
+                            <span class="icon">&#127856;</span>
+                            <span>Grab-and-go. Speciality coffee & our full range of homemade bakes.</span>
+                        </div>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=24c+Ballyrashane+Road,+Coleraine,+BT52+2NL" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:16px; padding:12px 28px; font-size:0.9rem;">Get Directions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT FORM ========== -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info fade-up">
+                    <p class="eyebrow">Get In Touch</p>
+                    <h2>Got a Question? Want to Order Bakes?</h2>
+                    <p>Whether you're enquiring about custom cakes, wholesale orders, booking the Barn Door Caravan for your event, or just want to say hello — drop us a message.</p>
+                    <div class="contact-detail">
+                        <div class="icon">&#128222;</div>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:07399049048">07399 049048</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">&#9993;</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:barndoorcoffee@outlook.com">barndoorcoffee@outlook.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="icon">&#128205;</div>
+                        <div>
+                            <strong>Stone Row Cafe</strong><br>
+                            19 Stone Row, Coleraine, BT52 1EP
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.instagram.com/barndoor_ni/" target="_blank" rel="noopener" aria-label="Instagram">&#128247;</a>
+                        <a href="https://www.facebook.com/barndoorcoffee/" target="_blank" rel="noopener" aria-label="Facebook">&#102;</a>
+                    </div>
+                </div>
+                <div class="contact-form fade-up" id="contactForm">
+                    <h3>Send Us a Message</h3>
+                    <form id="form" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key — Replace with real key -->
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                        <input type="hidden" name="redirect" value="">
+                        <input type="hidden" name="subject" value="New enquiry from Barn Door Coffee website">
+                        <!-- Honeypot anti-spam -->
+                        <input type="checkbox" name="botcheck" style="display:none;">
+                        <div style="display:none;"><input type="text" name="honeypot"></div>
+
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="e.g. Sarah McAllister">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="enquiry">What's This About?</label>
+                            <select id="enquiry" name="enquiry">
+                                <option value="General Enquiry">General Enquiry</option>
+                                <option value="Custom Cake Order">Custom Cake Order</option>
+                                <option value="Wholesale Bakes">Wholesale Bakes</option>
+                                <option value="Barn Door Caravan Booking">Barn Door Caravan Booking</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required placeholder="Tell us what you need..."></textarea>
+                        </div>
+                        <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== URGENCY BANNER ========== -->
+    <section class="urgency-banner">
+        <div class="container">
+            <h2>Life's Too Short for Bad Coffee & Shop-Bought Bakes</h2>
+            <p>Come taste the difference. Stone Row Cafe open Mon—Sat, 9:30am—4pm. Bring the family. Bring the dog. You'll wish you'd found us sooner.</p>
+            <a href="https://www.google.com/maps/dir/?api=1&destination=19+Stone+Row,+Coleraine,+BT52+1EP" target="_blank" rel="noopener" class="btn">Get Directions Now</a>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Barn Door Coffee & Kitchen</h4>
+                    <p>Speciality coffee, homemade bakes & fresh brunch in Coleraine. Two locations, one standard — everything made with love from local, seasonal produce.</p>
+                </div>
+                <div>
+                    <h4>Stone Row Cafe</h4>
+                    <p>19 Stone Row<br>Coleraine, BT52 1EP<br>Mon — Sat: 9:30am — 4pm</p>
+                </div>
+                <div>
+                    <h4>Waterside Bakery</h4>
+                    <p>24c Ballyrashane Road<br>Coleraine, BT52 2NL<br>Mon — Fri: 8:30am — 3pm<br>Sat: 10am — 3pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Barn Door Coffee & Kitchen. All rights reserved.</span>
+                <a href="https://www.realfastwebsite.com" target="_blank" rel="noopener">Website by www.realfastwebsite.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        /* --- Header scroll effect --- */
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        /* --- Mobile nav toggle --- */
+        const mobileToggle = document.getElementById('mobileToggle');
+        const nav = document.getElementById('nav');
+        mobileToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => nav.classList.remove('open'));
+        });
+
+        /* --- Scroll animations (progressive enhancement) --- */
+        if ('IntersectionObserver' in window) {
+            const fadeEls = document.querySelectorAll('.fade-up');
+            fadeEls.forEach(el => el.classList.add('will-animate'));
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            fadeEls.forEach(el => observer.observe(el));
+        }
+
+        /* --- Web3Forms AJAX submission --- */
+        const form = document.getElementById('form');
+        const submitBtn = document.getElementById('submitBtn');
+        const contactFormContainer = document.getElementById('contactForm');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: new FormData(form)
+                });
+                const data = await response.json();
+
+                if (data.success) {
+                    submitBtn.textContent = 'Sent!';
+                    submitBtn.classList.add('success');
+                    setTimeout(() => {
+                        contactFormContainer.innerHTML = `
+                            <div class="form-success-msg">
+                                <h3>Message Received!</h3>
+                                <p>Thanks for getting in touch. We'll get back to you as soon as we can.</p>
+                                <p style="font-size:0.9rem;">Need a faster reply? Give us a ring:</p>
+                                <a href="tel:07399049048" class="btn btn-dark" style="margin-top:8px;">Call 07399 049048</a>
+                            </div>
+                        `;
+                    }, 800);
+                } else {
+                    submitBtn.textContent = 'Something went wrong — try again';
+                    submitBtn.disabled = false;
+                }
+            } catch (err) {
+                submitBtn.textContent = 'Something went wrong — try again';
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
