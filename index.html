@@ -473,18 +473,17 @@
             margin-top: 28px;
         }
         .contact-social a {
-            width: 44px;
-            height: 44px;
-            background: #5C3D2E;
-            color: #fff;
-            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.1rem;
-            transition: background 0.3s;
+            transition: opacity 0.3s, transform 0.3s;
         }
-        .contact-social a:hover { background: #C4703F; }
+        .contact-social a:hover { opacity: 0.8; transform: translateY(-2px); }
+        .contact-social a img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
         .contact-form {
             background: #fff;
             padding: 40px;
@@ -936,7 +935,7 @@
                         </div>
                     </div>
                     <div class="contact-detail">
-                        <div class="icon" style="background:#25D366;"><img src="images/whatsapp.webp" alt="WhatsApp" style="width:22px;height:22px;"></div>
+                        <div class="icon" style="background:#25D366; padding:10px;"><img src="images/whatsapp.webp" alt="WhatsApp" style="width:24px;height:24px;object-fit:contain;"></div>
                         <div>
                             <strong>WhatsApp</strong><br>
                             <a href="https://wa.me/4407399049048" target="_blank" rel="noopener">Message us on WhatsApp</a>
@@ -957,9 +956,9 @@
                         </div>
                     </div>
                     <div class="contact-social">
-                        <a href="https://www.instagram.com/barndoor_ni/" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/instagram.webp" alt="Instagram" style="width:22px;height:22px;"></a>
-                        <a href="https://www.facebook.com/barndoorcoffee/" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/facebook.webp" alt="Facebook" style="width:22px;height:22px;"></a>
-                        <a href="https://wa.me/4407399049048" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="images/whatsapp.webp" alt="WhatsApp" style="width:22px;height:22px;"></a>
+                        <a href="https://www.instagram.com/barndoor_ni/" target="_blank" rel="noopener" aria-label="Instagram"><img src="images/instagram.webp" alt="Instagram"></a>
+                        <a href="https://www.facebook.com/barndoorcoffee/" target="_blank" rel="noopener" aria-label="Facebook"><img src="images/facebook.webp" alt="Facebook"></a>
+                        <a href="https://wa.me/4407399049048" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="images/whatsapp.webp" alt="WhatsApp"></a>
                     </div>
                 </div>
                 <div class="contact-form fade-up" id="contactForm">
